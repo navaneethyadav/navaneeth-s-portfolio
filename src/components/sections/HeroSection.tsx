@@ -9,7 +9,7 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* ✅ Background Image */}
+      {/* Background Image */}
       <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
@@ -21,24 +21,23 @@ export const HeroSection = () => {
         <div className="absolute inset-0 bg-background/70 pointer-events-none" />
       </div>
 
-      {/* ✅ Grid Overlay */}
+      {/* Grid Overlay */}
       <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
 
-      {/* ✅ Gradient Orbs */}
+      {/* Gradient Orbs */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse pointer-events-none" />
-
       <div
         className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] animate-pulse pointer-events-none"
         style={{ animationDelay: "1s" }}
       />
 
-      {/* ✅ Content */}
+      {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
 
-        {/* Profile Image */}
+        {/* ✅ Profile Image (FIXED PATH) */}
         <div className="flex justify-center mb-6 animate-fade-in-down">
           <img
-            src="/navaneeth.jpeg"
+            src={`${import.meta.env.BASE_URL}navaneeth.jpeg`}
             alt="Navaneeth Kaku"
             onClick={() => setOpen(true)}
             className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-primary shadow-xl cursor-pointer hover:scale-105 transition"
@@ -69,7 +68,7 @@ export const HeroSection = () => {
 
           {/* Resume */}
           <Button variant="hero" size="lg" asChild>
-            <a href="/Navaneeth_Resume.pdf" download>
+            <a href={`${import.meta.env.BASE_URL}Navaneeth_Resume.pdf`} download>
               <Download className="mr-2" size={20} />
               Download Resume
             </a>
@@ -93,14 +92,14 @@ export const HeroSection = () => {
         </a>
       </div>
 
-      {/* Image Popup */}
+      {/* ✅ Image Popup (FIXED PATH) */}
       {open && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
           onClick={() => setOpen(false)}
         >
           <img
-            src="/navaneeth.jpeg"
+            src={`${import.meta.env.BASE_URL}navaneeth.jpeg`}
             alt="Full View"
             className="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl"
           />
