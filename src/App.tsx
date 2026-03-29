@@ -13,13 +13,18 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      
+      {/* ✅ ONLY CHANGE IS HERE */}
+      <BrowserRouter basename={import.meta.env.DEV ? "/" : "/navaneeth-s-portfolio"}>
+      
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+
       </BrowserRouter>
+
     </TooltipProvider>
   </QueryClientProvider>
 );
